@@ -2,7 +2,12 @@
 export AWS_PROFILE=deep-dive
 
 # If you don't have jq installed, you're going to need it
-sudo apt install jq -y
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  brew install jq
+else
+  sudo apt install jq -y
+fi
 
 # We're going to manually create two new subnets
 
